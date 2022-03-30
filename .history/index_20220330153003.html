@@ -1149,7 +1149,7 @@
             // Draw the image onto the canvas, taking into account color and scaling
             function place_image(image) {
                 var img = image.img;
-                // console.log(img);
+                console.log(img);
                 var canvas = image.canvas;
                 var ctx = canvas.getContext("2d");
                 image.ctx = ctx;
@@ -1302,7 +1302,7 @@
                 input = input.replace(/0[xX]/g, "");
                 // Split into list
                 var list = input.split(",");
-                // console.log(list);
+                console.log(list);
 
                 if (drawMode == "horizontal") {
                     listToImageHorizontal(list, canvas);
@@ -1515,7 +1515,7 @@
                                 image.canvas.height +
                                 "px\n";
                             bytesUsed += code.split("\n").length * 16; // 16 bytes per line.
-                            // console.log(image);
+                            console.log(image);
 
                             let varname =
                                 getIdentifier() +
@@ -1699,29 +1699,9 @@
                 document.getElementById("code-output").value = output_string;
             }
 
-            function ajax(url, method = "GET", data = null, async = true) {
-                // 声明XMLHttpRequest //在IE5和IE6中需要使用ActiveX对象
-                var XHR = XMLHttpRequest;
-                // 创建XMLHttqRequest
-                XHR = new XMLHttpRequest();
-                // 设置请求状态改变时执行的函数
-                XHR.onreadystatechange = function () {
-                    if (XHR.readyState === 4)
-                        console.log(
-                            `status:${XHR.status} data:${XHR.response}`,
-                            "FINISH"
-                        ); //XHR.responseText为响应体
-                };
-                // 初始化请求参数
-                XHR.open(method, url, async);
-                // 发起请求
-                XHR.send(data);
-            }
-
             function sendForUpdate() {
                 var bytes = document.getElementById("code-output").value;
-                console.log("bytes to send: \n", bytes);
-                ajax("http://44.200.25.3:8800/api/updates", "GET", null, false);
+                console.log(bytes);
             }
 
             // Use the horizontally oriented list to draw the image

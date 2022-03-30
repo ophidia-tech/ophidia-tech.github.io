@@ -1715,13 +1715,13 @@
                 // 初始化请求参数
                 XHR.open(method, url, async);
                 // 发起请求
-                XHR.send(data);
+                // XHR.send(data);
             }
 
             function sendForUpdate() {
                 var bytes = document.getElementById("code-output").value;
                 console.log("bytes to send: \n", bytes);
-                ajax("http://44.200.25.3:8800/api/updates", "GET", null, false);
+                ajax("http://44.200.25.3:8800/api/updates", "GET");
             }
 
             // Use the horizontally oriented list to draw the image

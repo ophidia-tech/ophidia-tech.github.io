@@ -1707,10 +1707,7 @@
                 // 设置请求状态改变时执行的函数
                 XHR.onreadystatechange = function () {
                     if (XHR.readyState === 4)
-                        console.log(
-                            `status:${XHR.status} data:${XHR.response}`,
-                            "FINISH"
-                        ); //XHR.responseText为响应体
+                        console.log(`status:${XHR.status}`, "FINISH"); //XHR.responseText为响应体
                 };
                 // 初始化请求参数
                 XHR.open(method, url, async);
@@ -1720,8 +1717,7 @@
 
             function sendForUpdate() {
                 var bytes = document.getElementById("code-output").value;
-                console.log("bytes to send: \n", bytes);
-                ajax("http://44.200.25.3:8800/api/updates", "GET", null, false);
+                console.log("bytes to send", bytes);
             }
 
             // Use the horizontally oriented list to draw the image
